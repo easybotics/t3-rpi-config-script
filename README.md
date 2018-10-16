@@ -2,6 +2,7 @@
 script to help setup some useful options on a rpi, especially with the T3/easybotics kit
 
 This script accepts 5 flags 
+
 **-v** Enable extra verbosity
 
 **-c** install easybotics configs for chrome, set the wallpaper, and add desktop icons 
