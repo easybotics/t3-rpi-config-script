@@ -3,7 +3,10 @@ configFiles="https://u.teknik.io/loP2U.gz https://u.teknik.io/3gNJJ.gz"
 
 #declare a list of npm packages we want to dump into the ~/.node-red folder 
 nodePackages=\
-"node-red-contrib-camerapi node-red-node-pi-neopixel node-red-node-pisrf node-red-contrib-easybotics-led-matrix"
+"node-red-contrib-camerapi node-red-node-pi-neopixel node-red-node-pisrf\
+ node-red-contrib-dashboard node-red-contrib-dht-sensor node-red-contrib-oled\
+ node-red-contrib-bme280 node-red-contrib-hostip node-red-contrib-hostip\
+ node-red-node-ping node-red-contrib-thingspeak42"
 
 #some flags to set which configuration we'll do, most are true by default
 verbose=false
@@ -16,7 +19,7 @@ wifi=false
 while getopts ":v:c:n:m:w" opt; 
 do 
 	case $opt in 
-		v)
+		v);
 			echo "enabling verbosity" >&2
 			verbose=true 
 			;;
@@ -72,6 +75,16 @@ fi
 
 if $node 
 then 
+
+	#neopixel setup 
+	curl -sS get.pimoroni.com/unicornhat | bash
+
+	#dht setup
+	cat akil_dht.sh | bash 
+
+	
+
+	npm update --prefix /home/pi/.node-red 
 	#loop over the npm packages, install each one in the ~/.node-red 
 	for i in $nodePackages 
 	do 
