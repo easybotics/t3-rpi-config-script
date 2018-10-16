@@ -21,19 +21,23 @@ do
 			verbose=true 
 			;;
 		c)
-			if verbose then echo "enabling easybotics configs for chrome ect" >&2 fi
+			if $verbose; then echo "enabling easybotics configs for chrome ect" >&2 
+			fi
 			configCopy=true 
 			;;
 		n)
-			if verbose then echo "installing node-red nodes and sensor libraries" >&2 fi
+			if $verbose; then echo "installing node-red nodes and sensor libraries" >&2 
+			fi
 			node=true 
 			;;
 		m)
-			if verbose then echo "installing led-matrix libraries and nodes" >&2 fi
+			if $verbose; then echo "installing led-matrix libraries and nodes" >&2 
+			fi
 			ledMatrix=true 
 			;;
 		w)
-			if verbose then echo "appending default wifi connection" >&2 fi
+			if $verbose; then echo "appending default wifi connection" >&2 
+			fi
 			wifi=true 
 			;;
 
