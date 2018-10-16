@@ -5,7 +5,7 @@ configFiles="https://u.teknik.io/loP2U.gz https://u.teknik.io/3gNJJ.gz"
 nodePackages=\
 "node-red-contrib-camerapi node-red-node-pi-neopixel node-red-node-pisrf\
  node-red-contrib-dashboard node-red-contrib-dht-sensor node-red-contrib-oled\
- node-red-contrib-bme280 node-red-contrib-hostip node-red-contrib-hostip\
+ node-red-contrib-bme280 node-red-contrib-cpu node-red-contrib-hostip\
  node-red-node-ping node-red-contrib-thingspeak42"
 
 #some flags to set which configuration we'll do, most are true by default
@@ -16,7 +16,7 @@ ledMatrix=false
 wifi=false
 
 
-while getopts ":v:c:n:m:w" opt; 
+while getopts "vcnmw" opt; 
 do 
 	case $opt in 
 		v)
@@ -76,6 +76,7 @@ fi
 if $node 
 then 
 
+	echo "presetup, neopixel and dht"
 	#neopixel setup 
 	curl -sS get.pimoroni.com/unicornhat | bash
 
@@ -89,7 +90,7 @@ then
 	for i in $nodePackages 
 	do 
 		echo "installing $i" 
-	#	npm i --prefix /home/pi/.node-red $i
+		npm i --prefix /home/pi/.node-red $i
 	done 
 fi
 
