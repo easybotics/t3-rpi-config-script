@@ -19,7 +19,7 @@ wifi=false
 while getopts ":v:c:n:m:w" opt; 
 do 
 	case $opt in 
-		v);
+		v)
 			echo "enabling verbosity" >&2
 			verbose=true 
 			;;
