@@ -50,6 +50,15 @@ do
 	esac 
 done 
 
+read -p "Would you like to update packages before starting (recommended) Y/N" -n 1 - r 
+echo 
+if [[ $REPLY =~ ^[Yy$ ]] 
+then 
+	sudo apt-get update 
+	sudo apt-get upgrade --fix-missing 
+fi
+
+
 if $configCopy 
 then
 	#loop over the archives, curl each one and pipe it into tar to unpack them 
