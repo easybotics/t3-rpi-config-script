@@ -6,11 +6,11 @@ nodePackages=\
 "node-red-contrib-camerapi node-red-node-pi-neopixel node-red-node-pisrf node-red-contrib-easybotics-led-matrix"
 
 #some flags to set which configuration we'll do, most are true by default
+verbose=false
 configCopy=false
 node=false
 ledMatrix=false
 wifi=false
-verbose=false
 
 
 while getopts ":v:c:n:m:w" opt; 
@@ -21,19 +21,19 @@ do
 			verbose=true 
 			;;
 		c)
-			if verbose echo "enabling easybotics configs for chrome ect" >&2 fi
+			if verbose then echo "enabling easybotics configs for chrome ect" >&2 fi
 			configCopy=true 
 			;;
 		n)
-			if verbose echo "installing node-red nodes and sensor libraries" >&2 fi
+			if verbose then echo "installing node-red nodes and sensor libraries" >&2 fi
 			node=true 
 			;;
 		m)
-			if verbose echo "installing led-matrix libraries and nodes" >&2 fi
+			if verbose then echo "installing led-matrix libraries and nodes" >&2 fi
 			ledMatrix=true 
 			;;
 		w)
-			if verbose echo "appending default wifi connection" >&2 fi
+			if verbose then echo "appending default wifi connection" >&2 fi
 			wifi=true 
 			;;
 
@@ -44,6 +44,7 @@ do
 done 
 
 if $configCopy 
+then
 	#loop over the archives, curl each one and pipe it into tar to unpack them 
 	for i in $configFiles
 	do
@@ -52,9 +53,10 @@ if $configCopy
 	done 
 fi
 			
-if $node 
+if $ledMatrix 
 then
 
+	#TODO: setup icons and menu items 
 	echo "installing node-red stuff" 
 	setup node-red autostart 
 	systemctl enable nodered.service 
@@ -64,7 +66,7 @@ then
 	d=/boot/config.txt && sudo sed "/.*dtparam=audio=on*./c\dtparam=audio=off" $d > tmp && sudo cp -f tmp $d
 fi
 
-if $ledMatrix 
+if $node 
 then 
 	#loop over the npm packages, install each one in the ~/.node-red 
 	for i in $nodePackages 
