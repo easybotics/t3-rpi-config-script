@@ -94,12 +94,12 @@ then
 
 	
 
-	npm update --prefix /home/pi/.node-red 
+	npm update --save --prefix /home/pi/.node-red 
 	#loop over the npm packages, install each one in the ~/.node-red 
 	for i in $nodePackages 
 	do 
 		echo "installing $i" 
-		npm i --prefix /home/pi/.node-red $i
+		npm i --save --prefix /home/pi/.node-red $i
 	done 
 fi
 
