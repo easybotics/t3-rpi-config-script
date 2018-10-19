@@ -1,3 +1,10 @@
+TODO:
+Must install node-red first - not pre-installed on new default images
+needs sudo apt-get install npm
+
+
+
+
 # t3-rpi-config-script
 script to help setup some useful options on a rpi, especially with the T3/easybotics kit
 
