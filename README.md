@@ -12,6 +12,7 @@ This script accepts 5 flags
 **-m** install easybotics led-matrix nodes, and setup node-red to run as root on startup by default 
 
 example usage:
-sudo ./imageBuild.sh -vcn 
+First navigate to the folder where you downloaded this repo then:
+sudo sh imageBuild.sh -vcn 
 
 sets up google chrome configs, sets the wallpaper, and installs a bunch of nodes 
