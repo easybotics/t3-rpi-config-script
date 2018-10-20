@@ -3,6 +3,10 @@ Must install node-red first - not pre-installed on new default images
 
 needs sudo apt-get install npm
 
+needs to add 127.0.0.1:1880 to the browser shortcuts
+
+needs to update node-red
+
 
 
 
