@@ -85,6 +85,8 @@ then
 	#setup node-red autostart 
 	systemctl enable nodered.service 
 	npm config set unsafe-perm true 
+	npm i --save --prefix /home/pi/.node-red node-red-contrib-easybotics-led-matrix
+
 	d=/lib/systemd/system/nodered.service && sudo sed "s/User=pi/User=root/;s/Group=pi/Group=root/" $d > tmp && sudo mv -f tmp $d
 #	d=/root/.node-red/settings.js && sudo sed "/.*userDir:*./c\userDir: '\/home\/pi\/.node-red\/'," $d > tmp && sudo mv -f tmp $d
 	d=/boot/config.txt && sudo sed "/.*dtparam=audio=on*./c\dtparam=audio=off" $d > tmp && sudo cp -f tmp $d
