@@ -22,7 +22,7 @@ wifi=false
 piwizFlag=false
 
 
-while getopts "vcnmw" opt; 
+while getopts "vcnmwp" opt; 
 do 
 	case $opt in 
 		v)
