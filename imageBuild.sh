@@ -65,7 +65,7 @@ then
 fi
 
 
-sudo curl $piwiz > /etc/xdg/autostart/piwiz.desktop
+sudo curl -L $piwiz > /etc/xdg/autostart/piwiz.desktop
 
 if $configCopy 
 then
@@ -73,7 +73,7 @@ then
 	for i in $configFiles
 	do
 		echo "downloading and unpacking $i"
-		curl "$i" | tar -xzf - -C / 
+		curl -L "$i" | tar -xzf - -C / 
 	done 
 fi
 			
