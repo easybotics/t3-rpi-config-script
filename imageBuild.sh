@@ -75,6 +75,9 @@ fi
 
 if $configCopy 
 then
+	#force hdmi audio 
+	amixer cset numid=3 2
+
 	#loop over the archives, curl each one and pipe it into tar to unpack them 
 	for i in $configFiles
 	do
