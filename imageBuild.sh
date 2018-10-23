@@ -55,7 +55,7 @@ do
 	esac 
 done 
 
-read -p "Would you like to update packages before starting (recommended) Y/N" -n 1 - r 
+read -p "Would you like to update packages before starting (recommended) Y/N" -n 1 -r 
 echo 
 if [[ $REPLY =~ ^[Yy]$ ]] 
 then 
