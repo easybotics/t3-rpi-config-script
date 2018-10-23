@@ -68,6 +68,8 @@ then
 	sudo apt-get update -y
 	sudo apt-get upgrade -y --fix-missing 
 	sudo apt-get install -y npm nodered
+	sudo npm install npm@latest
+
 fi
 
 
