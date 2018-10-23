@@ -65,7 +65,7 @@ then
 fi
 
 
-sudo curl -L $piwiz > /etc/xdg/autostart/piwiz.desktop
+#sudo curl -L $piwiz -o /etc/xdg/autostart/piwiz.desktop
 
 if $configCopy 
 then
@@ -82,7 +82,7 @@ then
 
 	#TODO: setup icons and menu items 
 	echo "installing node-red stuff" 
-	setup node-red autostart 
+	#setup node-red autostart 
 	systemctl enable nodered.service 
 	npm config set unsafe-perm true 
 	d=/lib/systemd/system/nodered.service && sudo sed "s/User=pi/User=root/;s/Group=pi/Group=root/" $d > tmp && sudo mv -f tmp $d
