@@ -3,7 +3,7 @@
 #declare a list of config archives we prepared earlier 
 configFiles="https://github.com/easybotics/t3-rpi-config-script/raw/master/google_chrome_config.tar.gz https://github.com/easybotics/t3-rpi-config-script/raw/master/desktop_config.tar.gz  https://github.com/easybotics/t3-rpi-config-script/raw/master/node_red_root_config.tar.gz" 
 
-piwiz="https://github.com/easybotics/t3-rpi-config-script/raw/master/piwiz.desktop"
+piwiz="https://github.com/easybotics/t3-rpi-config-script/raw/master/piwiz.tar.gz"
 
 #declare a list of npm packages we want to dump into the ~/.node-red folder 
 nodePackages=\
@@ -19,6 +19,7 @@ configCopy=false
 node=false
 ledMatrix=false
 wifi=false
+piwizFlag=false
 
 
 while getopts "vcnmw" opt; 
@@ -48,6 +49,11 @@ do
 			fi
 			wifi=true 
 			;;
+		p) 
+			if $verbose; then echo "enabling the user-friendly autostart service" >&2 
+			fi 
+			piwizFlag=true 
+			;;
 
 		\?)
 			echo "invalid option: -$OPTARG" >&2
@@ -65,8 +71,6 @@ then
 fi
 
 
-#sudo curl -L $piwiz -o /etc/xdg/autostart/piwiz.desktop
-
 if $configCopy 
 then
 	#loop over the archives, curl each one and pipe it into tar to unpack them 
@@ -75,6 +79,11 @@ then
 		echo "downloading and unpacking $i"
 		curl -L "$i" | tar -xzf - -C / 
 	done 
+fi
+
+if $piwizFlat
+then 
+	curl -L $piwiz | tar -xzf - -C /
 fi
 			
 if $ledMatrix 

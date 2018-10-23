@@ -24,6 +24,8 @@ This script accepts 5 flags
 
 **-m** install easybotics led-matrix nodes, and setup node-red to run as root on startup by default 
 
+**-p** reenable the user friendly 'first boot' service 
+
 ## example usage:
 First navigate to the folder where you downloaded this repo then:
 `sudo sh imageBuild.sh -vcn`
