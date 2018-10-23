@@ -1,12 +1,13 @@
 #declare a list of config archives we prepared earlier 
-configFiles="https://u.teknik.io/loP2U.gz https://u.teknik.io/3gNJJ.gz" 
+configFiles="https://github.com/easybotics/t3-rpi-config-script/raw/master/google_chrome_config.tar.gz https://github.com/easybotics/t3-rpi-config-script/raw/master/desktop_config.tar.gz  https://github.com/easybotics/t3-rpi-config-script/raw/master/node_red_root_config.tar" 
 
 #declare a list of npm packages we want to dump into the ~/.node-red folder 
 nodePackages=\
 "node-red-contrib-camerapi node-red-node-pi-neopixel node-red-node-pisrf\
  node-red-contrib-dashboard node-red-contrib-dht-sensor node-red-contrib-oled\
  node-red-contrib-bme280 node-red-contrib-cpu node-red-contrib-hostip\
- node-red-node-ping node-red-contrib-thingspeak42"
+ node-red-node-ping node-red-contrib-thingspeak42\
+ node-red-contrib-easybotics-air-quality"
 
 #some flags to set which configuration we'll do, most are true by default
 verbose=false
@@ -52,7 +53,7 @@ done
 
 read -p "Would you like to update packages before starting (recommended) Y/N" -n 1 - r 
 echo 
-if [[ $REPLY =~ ^[Yy$ ]] 
+if [[ $REPLY =~ ^[Yy]$ ]] 
 then 
 	sudo apt-get update 
 	sudo apt-get upgrade --fix-missing 
