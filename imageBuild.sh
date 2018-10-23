@@ -1,3 +1,5 @@
+#!/bin/bash
+
 #declare a list of config archives we prepared earlier 
 configFiles="https://github.com/easybotics/t3-rpi-config-script/raw/master/google_chrome_config.tar.gz https://github.com/easybotics/t3-rpi-config-script/raw/master/desktop_config.tar.gz  https://github.com/easybotics/t3-rpi-config-script/raw/master/node_red_root_config.tar" 
 
@@ -63,7 +65,7 @@ then
 fi
 
 
-sudo curl $piwiz > /etc/xdg/autostart/
+sudo curl $piwiz > /etc/xdg/autostart/piwiz.desktop
 
 if $configCopy 
 then
