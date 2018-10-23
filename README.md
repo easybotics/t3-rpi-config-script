@@ -33,8 +33,11 @@ First navigate to the folder where you downloaded this repo then:
 ## How to get started!
 #try these commands (in order) 
 `sudo apt-get install git -y  
+
  sudo git clone https://github.com/easybotics/t3-rpi-config-script 
+
  cd t3-rpi-config-script 
+
  sudo ./imageBuild.sh -vcnm
 ` 
 
