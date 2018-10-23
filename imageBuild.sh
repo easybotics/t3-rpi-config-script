@@ -68,7 +68,7 @@ then
 	sudo apt-get update -y
 	sudo apt-get upgrade -y --fix-missing 
 	sudo apt-get install -y npm nodered
-	sudo npm install npm@latest
+	sudo npm install -g npm@latest --unsafe-perm
 
 fi
 
@@ -136,3 +136,13 @@ then
 			key_mgmt=WPKA-PSK
 		}'>>/etc/wpa_supplicant/wpa_supplicant.conf  
 fi
+
+read -p "Would you like to reboot now (recommended) Y/N" -n 1 -r 
+echo 
+if [[ $REPLY =~ ^[Yy]$ ]] 
+then 
+	sudo reboot
+
+fi
+
+
