@@ -69,9 +69,7 @@ then
 	sudo apt-get upgrade -y --fix-missing 
 	sudo apt-get install -y npm nodered
 	sudo npm install -g npm@latest --unsafe-perm
-	sudo su pi 
 	npm install -g npm@latest --unsafe-perm
-	sudo su root
 
 fi
 
