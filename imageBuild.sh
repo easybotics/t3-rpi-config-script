@@ -67,9 +67,9 @@ if [[ $REPLY =~ ^[Yy]$ ]]
 then 
 	sudo apt-get update -y
 	sudo apt-get upgrade -y --fix-missing 
-	sudo apt-get install -y npm nodered
-	sudo npm install -g npm@latest --unsafe-perm
-	npm install -g npm@latest --unsafe-perm
+#	sudo apt-get install -y npm nodered
+#	sudo npm install -g npm@latest --unsafe-perm
+#	npm install -g npm@latest --unsafe-perm
 
 fi
 
@@ -85,6 +85,9 @@ then
 		echo "downloading and unpacking $i"
 		curl -L "$i" | tar -xzf - -C / 
 	done 
+
+	#give ownership of root settings for node-red..
+	sudo chown pi /root/.node-red/settings.js
 fi
 
 if $piwizFlat
