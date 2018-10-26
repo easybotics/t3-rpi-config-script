@@ -67,9 +67,9 @@ if [[ $REPLY =~ ^[Yy]$ ]]
 then 
 	sudo apt-get update -y
 	sudo apt-get upgrade -y --fix-missing 
-#	sudo apt-get install -y npm nodered
-#	sudo npm install -g npm@latest --unsafe-perm
-#	npm install -g npm@latest --unsafe-perm
+	bash <(curl -sL https://raw.githubusercontent.com/node-red/raspbian-deb-package/master/resources/update-nodejs-and-nodered)
+	sudo apt-get install -y npm 
+	sudo npm install npm@latest --unsafe-perm -g
 
 fi
 
