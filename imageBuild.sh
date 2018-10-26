@@ -79,13 +79,13 @@ fi
 if $configCopy 
 then
 	#force hdmi audio 
-	amixer cset numid=3 2
+	sudo amixer cset numid=3 2
 
 	#loop over the archives, curl each one and pipe it into tar to unpack them 
 	for i in $configFiles
 	do
 		echo "downloading and unpacking $i"
-		curl -L "$i" | tar -xzf - -C / 
+		curl -L "$i" | sudo tar -xzf - -C / 
 	done 
 
 	#give ownership of root settings for node-red..
@@ -103,8 +103,8 @@ then
 	#TODO: setup icons and menu items 
 	echo "installing node-red stuff" 
 	#setup node-red autostart 
-	systemctl enable nodered.service 
-	npm config set unsafe-perm true 
+	sudo systemctl enable nodered.service 
+	sudo npm config set unsafe-perm true 
 	npm i --save --prefix /home/pi/.node-red node-red-contrib-easybotics-led-matrix
 
 	d=/lib/systemd/system/nodered.service && sudo sed "s/User=pi/User=root/;s/Group=pi/Group=root/" $d > tmp && sudo mv -f tmp $d
@@ -141,7 +141,7 @@ fi
 if $wifi 
 then
 	echo "setting up a wifi connection : rpi" 
-	echo 'network={
+	sudo echo 'network={
 			ssid="rpi"
 			psk="raspberry"
 			key_mgmt=WPKA-PSK
