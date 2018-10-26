@@ -119,7 +119,6 @@ fi
 if $node 
 then 
 
-	npm init /home/pi/.node-red/
 	echo "presetup, neopixel and dht"
 	#neopixel setup 
 	curl -sS get.pimoroni.com/unicornhat | bash
