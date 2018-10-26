@@ -1,9 +1,11 @@
 #!/bin/bash
 
 #declare a list of config archives we prepared earlier 
-configFiles="https://github.com/easybotics/t3-rpi-config-script/raw/master/google_chrome_config.tar.gz https://github.com/easybotics/t3-rpi-config-script/raw/master/desktop_config.tar.gz  https://github.com/easybotics/t3-rpi-config-script/raw/master/node_red_root_config.tar.gz" 
+configFiles="https://github.com/easybotics/t3-rpi-config-script/raw/master/google_chrome_config.tar.gz https://github.com/easybotics/t3-rpi-config-script/raw/master/desktop_config.tar.gz" 
 
 piwiz="https://github.com/easybotics/t3-rpi-config-script/raw/master/piwiz.tar.gz"
+flows="https://github.com/easybotics/t3-rpi-config-script/raw/master/node_red_root_config.tar.gz"
+rootRed="https://github.com/easybotics/t3-rpi-config-script/raw/master/node_red_root_config.tar.gz"
 
 #declare a list of npm packages we want to dump into the ~/.node-red folder 
 nodePackages=\
@@ -108,6 +110,10 @@ then
 	d=/lib/systemd/system/nodered.service && sudo sed "s/User=pi/User=root/;s/Group=pi/Group=root/" $d > tmp && sudo mv -f tmp $d
 #	d=/root/.node-red/settings.js && sudo sed "/.*userDir:*./c\userDir: '\/home\/pi\/.node-red\/'," $d > tmp && sudo mv -f tmp $d
 	d=/boot/config.txt && sudo sed "/.*dtparam=audio=on*./c\dtparam=audio=off" $d > tmp && sudo cp -f tmp $d
+
+
+	curl -L $flows | tar -xzf - -C /
+	curl -L $rootRed | tar -xzf - -C /
 fi
 
 if $node 
