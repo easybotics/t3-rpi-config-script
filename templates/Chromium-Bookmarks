@@ -1,0 +1,57 @@
+{
+   "checksum": "20765fb1aeb18b3945e0d9d2b22f08c1",
+   "roots": {
+      "bookmark_bar": {
+         "children": [ {
+            "date_added": "13184116551540775",
+            "id": "5",
+            "meta_info": {
+               "last_visited_desktop": "13185148115872923"
+            },
+            "name": "T³ Alliance",
+            "type": "url",
+            "url": "https://t3alliance.org/"
+         }, {
+            "date_added": "13185148136394291",
+            "id": "7",
+            "meta_info": {
+               "last_visited_desktop": "13185148287084930"
+            },
+            "name": "Node-RED",
+            "type": "url",
+            "url": "http://localhost:1880/"
+         }, {
+            "date_added": "13185148148042452",
+            "id": "8",
+            "meta_info": {
+               "last_visited_desktop": "13185148148046780"
+            },
+            "name": "UI",
+            "type": "url",
+            "url": "http://localhost:1880/ui/"
+         } ],
+         "date_added": "13184116503010477",
+         "date_modified": "13185148148042452",
+         "id": "1",
+         "name": "Bookmarks bar",
+         "type": "folder"
+      },
+      "other": {
+         "children": [  ],
+         "date_added": "13184116503010497",
+         "date_modified": "0",
+         "id": "2",
+         "name": "Other bookmarks",
+         "type": "folder"
+      },
+      "synced": {
+         "children": [  ],
+         "date_added": "13184116503010501",
+         "date_modified": "0",
+         "id": "3",
+         "name": "Mobile bookmarks",
+         "type": "folder"
+      }
+   },
+   "version": 1
+}
