@@ -23,7 +23,9 @@ This script accepts 5 flags
 
 **-p** reenable the user friendly 'first boot' service 
 
-**-r** ennable boot time resizing of the sd image 
+**-r** enable boot time resizing of the sd image 
+
+**-i** enable camera, I2c, and serial UART
 
 ## example usage:
 First navigate to the folder where you downloaded this repo then:
