@@ -25,7 +25,7 @@ piwizFlag=false
 bootResizeFlag=false
 
 
-while getopts "vcnmwp" opt; 
+while getopts "vcnmwpr" opt; 
 do 
 	case $opt in 
 		v)
