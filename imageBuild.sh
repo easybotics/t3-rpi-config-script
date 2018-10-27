@@ -22,6 +22,7 @@ node=false
 ledMatrix=false
 wifi=false
 piwizFlag=false
+bootResizeFlag=false
 
 
 while getopts "vcnmwp" opt; 
@@ -55,6 +56,12 @@ do
 			if $verbose; then echo "enabling the user-friendly autostart service" >&2 
 			fi 
 			piwizFlag=true 
+			;;
+
+		r) 
+			if $verbose; then echo "enabling image expansion on reboot" >&2 
+			fi
+			bootResizeFlag=true 
 			;;
 
 		\?)
@@ -155,4 +162,9 @@ then
 
 fi
 
+if $bootResizeFlag 
+then 
+	echo "enabling boot-resize" 
+	sudo echo 'init=/usr/lib/raspi-config/init_resize.sh' >> /boot/cmdline.txt
+fi
 
