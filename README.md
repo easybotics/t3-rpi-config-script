@@ -23,6 +23,8 @@ This script accepts 5 flags
 
 **-p** reenable the user friendly 'first boot' service 
 
+**-r** ennable boot time resizing of the sd image 
+
 ## example usage:
 First navigate to the folder where you downloaded this repo then:
 `./imageBuild.sh -vcnm`
