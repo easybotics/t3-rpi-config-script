@@ -76,7 +76,6 @@ if [[ $REPLY =~ ^[Yy]$ ]]
 then 
 	sudo apt-get update -y
 	sudo apt-get upgrade -y --fix-missing 
-	bash <(curl -sL https://raw.githubusercontent.com/node-red/raspbian-deb-package/master/resources/update-nodejs-and-nodered)
 	sudo apt-get install -y npm 
 	sudo npm install npm@latest --unsafe-perm -g
 
@@ -125,7 +124,8 @@ fi
 
 if $node 
 then 
-
+	echo "install node-red and nodejs"
+	bash <(curl -sL https://raw.githubusercontent.com/node-red/raspbian-deb-package/master/resources/update-nodejs-and-nodered)
 	echo "presetup, neopixel and dht"
 	#neopixel setup 
 	curl -sS get.pimoroni.com/unicornhat | bash
