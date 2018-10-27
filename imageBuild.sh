@@ -23,9 +23,10 @@ ledMatrix=false
 wifi=false
 piwizFlag=false
 bootResizeFlag=false
+interfaceFlag=false
 
 
-while getopts "vcnmwpr" opt; 
+while getopts "vcnmwpri" opt; 
 do 
 	case $opt in 
 		v)
@@ -62,6 +63,12 @@ do
 			if $verbose; then echo "enabling image expansion on reboot" >&2 
 			fi
 			bootResizeFlag=true 
+			;;
+
+		i) 
+			if $verbose; then echo "enabling hardware interfaces" >&2 
+			fi
+			interfaceFlag=true 
 			;;
 
 		\?)
@@ -133,8 +140,6 @@ then
 	#dht setup
 	cat akil_dht.sh | bash 
 
-	
-
 	npm update --save --prefix /home/pi/.node-red 
 	#loop over the npm packages, install each one in the ~/.node-red 
 	for i in $nodePackages 
@@ -168,3 +173,12 @@ then
 	sudo echo 'init=/usr/lib/raspi-config/init_resize.sh' >> /boot/cmdline.txt
 fi
 
+if $interfaceFlag 
+then 
+	echo "enabling interfaces" 
+	sudo raspi-config nonint do_camera 0 
+	sudo raspi-config nonint do_i2c 0 
+	sudo raspi-config nonint do_serial 2
+fi 
+
+	
