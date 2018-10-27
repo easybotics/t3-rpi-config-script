@@ -101,7 +101,7 @@ fi
 
 if $piwizFlat
 then 
-	curl -L $piwiz | tar -xzf - -C /
+	curl -L $piwiz | sudo tar -xzf - -C /
 fi
 			
 if $ledMatrix 
@@ -120,7 +120,7 @@ then
 
 
 	curl -L $flows | tar -xzf - -C /
-	curl -L $rootRed | tar -xzf - -C /
+	curl -L $rootRed | sudo tar -xzf - -C /
 fi
 
 if $node 
