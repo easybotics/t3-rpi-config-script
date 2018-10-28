@@ -28,6 +28,9 @@ This script accepts 5 flags
 **-i** enable camera, I2c, and serial UART
 
 ## example usage:
+
+Use 8GB SD Card - makes the DD and Pishrink process faster
+
 First navigate to the folder where you downloaded this repo then:
 `./imageBuild.sh -vcnm`
 
