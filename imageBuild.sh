@@ -103,6 +103,15 @@ then
 
 	#give ownership of root settings for node-red..
 	sudo chown pi /root/.node-red/settings.js
+
+	#install imagemagick 
+	sudo apt-get install -y imagemagick 
+
+	#loop over wallpapers and super-impose t3 logo 
+	for i in /usr/share/rpd-wallpaper/*.jpg 
+	do
+		composite placeholder.png $i -alpha Set $i
+	done
 fi
 
 if $piwizFlat
