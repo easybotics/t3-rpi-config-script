@@ -105,12 +105,13 @@ then
 	sudo chown pi /root/.node-red/settings.js
 
 	#install imagemagick 
+	sudo aot-get update
 	sudo apt-get install -y imagemagick 
 
 	#loop over wallpapers and super-impose t3 logo 
 	for i in /usr/share/rpd-wallpaper/*.jpg 
 	do
-		composite placeholder.png $i -alpha Set $i
+		sudo composite placeholder.png $i -alpha Set $i
 	done
 fi
 
