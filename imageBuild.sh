@@ -1,11 +1,11 @@
 #!/bin/bash
 
 #declare a list of config archives we prepared earlier 
-configFiles="https://github.com/easybotics/t3-rpi-config-script/raw/master/google_chrome_config.tar.gz https://github.com/easybotics/t3-rpi-config-script/raw/master/desktop_config.tar.gz" 
+configFiles="google_chrome_config.tar.gz desktop_config.tar.gz" 
 
-piwiz="https://github.com/easybotics/t3-rpi-config-script/raw/master/piwiz.tar.gz"
-flows="https://github.com/easybotics/t3-rpi-config-script/raw/master/node_red_root_config.tar.gz"
-rootRed="https://github.com/easybotics/t3-rpi-config-script/raw/master/node_red_root_config.tar.gz"
+piwiz="piwiz.tar.gz"
+flows="node_red_root_config.tar.gz"
+rootRed="node_red_root_config.tar.gz"
 
 #declare a list of npm packages we want to dump into the ~/.node-red folder 
 nodePackages=\
@@ -98,7 +98,7 @@ then
 	for i in $configFiles
 	do
 		echo "downloading and unpacking $i"
-		curl -L "$i" | sudo tar -xzf - -C / 
+		sudo tar -xzf $i -C / 
 	done 
 
 	#give ownership of root settings for node-red..
@@ -107,7 +107,7 @@ fi
 
 if $piwizFlat
 then 
-	curl -L $piwiz | sudo tar -xzf - -C /
+	sudo tar -xzf $piwiz -C /
 fi
 			
 if $ledMatrix 
@@ -125,8 +125,8 @@ then
 	d=/boot/config.txt && sudo sed "/.*dtparam=audio=on*./c\dtparam=audio=off" $d > tmp && sudo cp -f tmp $d
 
 
-	curl -L $flows | tar -xzf - -C /
-	curl -L $rootRed | sudo tar -xzf - -C /
+	sudo tar -xzf $flows -C /
+	sudo tar -xzf $rootRed -C /
 fi
 
 if $node 
@@ -138,7 +138,7 @@ then
 	curl -sS get.pimoroni.com/unicornhat | bash
 
 	#dht setup
-	cat akil_dht.sh | bash 
+	bash akil_dht.sh
 
 	npm update --save --prefix /home/pi/.node-red 
 	#loop over the npm packages, install each one in the ~/.node-red 
