@@ -111,6 +111,7 @@ then
 	#loop over wallpapers and super-impose t3 logo 
 	for i in /usr/share/rpd-wallpaper/*.jpg 
 	do
+		echo "imposing wallpaper on: $i"
 		sudo composite placeholder.png $i -alpha Set $i
 	done
 fi
