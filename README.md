@@ -6,8 +6,6 @@ Configuration script to help setup some useful options on a new Raspberry Pi, es
 * installs node-red nodes required by the [T3 Raspberry Pi curriculum](https://t3alliance.org/raspberry-pi-overview-page/)
 
 Script is a work in progress.  
-TODO List:
-* needs to add 127.0.0.1:1880 to the browser shortcuts
 
 ## `t3-rpi-config-script`
 
