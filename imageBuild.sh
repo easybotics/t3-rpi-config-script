@@ -83,7 +83,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]
 then 
 	sudo apt-get update -y
 	sudo apt-get upgrade -y --fix-missing 
-	sudo apt-get install -y npm 
+	sudo apt-get install -y npm xscreensaver
 	sudo npm install npm@latest --unsafe-perm -g
 
 fi
@@ -170,13 +170,7 @@ then
 		}'>>/etc/wpa_supplicant/wpa_supplicant.conf  
 fi
 
-read -p "Would you like to reboot now (recommended) Y/N" -n 1 -r 
-echo 
-if [[ $REPLY =~ ^[Yy]$ ]] 
-then 
-	sudo reboot
 
-fi
 
 if $bootResizeFlag 
 then 
@@ -192,4 +186,10 @@ then
 	sudo raspi-config nonint do_serial 2
 fi 
 
-	
+read -p "Would you like to reboot now (recommended) Y/N" -n 1 -r 
+echo 
+if [[ $REPLY =~ ^[Yy]$ ]] 
+then 
+	sudo reboot
+
+fi
