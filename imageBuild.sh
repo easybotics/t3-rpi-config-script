@@ -83,7 +83,9 @@ if [[ $REPLY =~ ^[Yy]$ ]]
 then 
 	sudo apt-get update -y
 	sudo apt-get upgrade -y --fix-missing 
-	sudo apt-get install -y npm xscreensaver ntfs-3g
+	sudo apt-get install -y npm
+	sudo apt-get install -y xscreensaver
+	sudo apt-get install -y ntfs-3g
 	sudo npm install npm@latest --unsafe-perm -g
 
 fi
