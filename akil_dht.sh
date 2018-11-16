@@ -8,6 +8,8 @@
     sudo make check
     sudo make install
     cd ~/
-    sudo npm install –unsafe-perm -g node-dht-sensor
-    sudo npm install –unsafe-perm -g node-red-contrib-dht-sensor
+    sudo npm install --unsafe-perm -g node-dht-sensor
+    sudo npm install --unsafe-perm -g node-red-contrib-dht-sensor
+	rm -r bcm285-1.56
+	rm bcm2835-1.56.tar.gz
 
