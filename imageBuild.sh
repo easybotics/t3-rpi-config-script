@@ -177,7 +177,7 @@ fi
 if $bootResizeFlag 
 then 
 	echo "enabling boot-resize" 
-	sudo echo 'init=/usr/lib/raspi-config/init_resize.sh' >> /boot/cmdline.txt
+	sudo echo 'init=/usr/lib/raspi-config/init_resize.sh' | sudo tee --append  /boot/cmdline.txt
 fi
 
 if $interfaceFlag 
