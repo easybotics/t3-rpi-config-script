@@ -10,7 +10,7 @@ rootRed="node_red_root_config.tar.gz"
 #declare a list of npm packages we want to dump into the ~/.node-red folder 
 nodePackages=\
 "node-red-contrib-camerapi node-red-node-pi-neopixel node-red-node-pisrf\
- node-red-dashboard node-red-contrib-dht-sensor node-red-contrib-oled\
+ node-red-dashboard node-red-contrib-oled\
  node-red-contrib-bme280 node-red-contrib-cpu node-red-contrib-hostip\
  node-red-node-ping node-red-contrib-thingspeak42\
  node-red-contrib-easybotics-air-quality"
