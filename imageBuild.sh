@@ -24,9 +24,10 @@ wifi=false
 piwizFlag=false
 bootResizeFlag=false
 interfaceFlag=false
+piwizBinFlag=false
 
 
-while getopts "vcnmwpri" opt; 
+while getopts "vcnmwprib" opt; 
 do 
 	case $opt in 
 		v)
@@ -69,6 +70,12 @@ do
 			if $verbose; then echo "enabling hardware interfaces" >&2 
 			fi
 			interfaceFlag=true 
+			;;
+
+		b) 
+			if $verbose; then echo "replacing piwiz binary with cut one" >&2
+			fi
+			piwizBinFlag=true
 			;;
 
 		\?)
@@ -118,9 +125,14 @@ then
 	done
 fi
 
-if $piwizFlat
+if $piwizFlag
 then 
 	sudo tar -xzf $piwiz -C /
+fi
+
+if $piwizBinFLag
+then
+	sudo tar -xzf piwiz_bin.tar.gz -C /usr/bin
 fi
 			
 if $ledMatrix 
