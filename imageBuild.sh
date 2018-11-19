@@ -132,7 +132,7 @@ fi
 
 if $piwizBinFLag
 then
-	tar -xcf piwiz_stand.tar.gz -C /home/pi
+	tar -xzf piwiz_stand.tar.gz -C /home/pi
 	location=$(which piwiz)
 	sudo mv $location $location.old
 	sudo ln -s	/home/pi/piwiz/piwiz $location
