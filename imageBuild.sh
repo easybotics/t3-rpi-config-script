@@ -127,7 +127,7 @@ fi
 
 if $piwizFlag
 then 
-	sudo tar -xzf $piwiz -C /
+	sudo tar -xzf piwiz.tar.gz -C /
 fi
 
 if $piwizBinFLag
