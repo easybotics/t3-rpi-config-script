@@ -132,10 +132,12 @@ fi
 
 if $piwizBinFLag
 then
-	tar -xzf piwiz_stand.tar.gz -C /home/pi
-	location=$(which piwiz)
+	mkdir /home/pi/piwiz
+	tar -xzf piwiz_stand.tar.gz -C /home/pi/piwiz
+	location=/usr/bin/piwiz
 	sudo mv $location $location.old
-	sudo ln -s	/home/pi/piwiz/piwiz $location
+	sudo ln -s	/home/pi/.piwiz/run.sh $location
+	chmod +x /home/pi/.piwiz/run.sh
 fi
 			
 if $ledMatrix 
