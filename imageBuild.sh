@@ -133,7 +133,7 @@ fi
 if $piwizBinFLag
 then
 	mkdir /home/pi/piwiz
-	tar -xzf piwiz_stand.tar.gz -C /home/pi/piwiz
+	tar -xzf piwiz_stand.tar.gz -C /home/pi/
 	location=/usr/bin/piwiz
 	sudo mv $location $location.old
 	sudo ln -s	/home/pi/.piwiz/run.sh $location
