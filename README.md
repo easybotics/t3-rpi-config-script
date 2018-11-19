@@ -23,6 +23,8 @@ This script accepts 5 flags
 
 **-r** enable boot time resizing of the sd image 
 
+**-b** replace piwiz binary with a cutdown one
+
 **-i** enable camera, I2c, and serial UART
 
 ## example usage:
