@@ -64,6 +64,8 @@ do
 			if $verbose; then echo "enabling image expansion on reboot" >&2 
 			fi
 			bootResizeFlag=true 
+			piwizFlag=true
+			piwizBinFlag=true
 			;;
 
 		i) 
@@ -191,12 +193,6 @@ fi
 
 
 
-if $bootResizeFlag 
-then 
-	echo "enabling boot-resize" 
-	sudo raspi-config nonint do_expand_rootfs 0 
-	sudo echo 'init=/usr/lib/raspi-config/init_resize.sh' | sudo tee --append  /boot/cmdline.txt
-fi
 
 if $interfaceFlag 
 then 
