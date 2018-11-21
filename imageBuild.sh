@@ -200,6 +200,7 @@ then
 	sudo raspi-config nonint do_camera 0 
 	sudo raspi-config nonint do_i2c 0 
 	sudo raspi-config nonint do_serial 2
+	sudo raspi-config nonint do_ssh 1
 	echo "enabled interfaces"
 fi 
 
