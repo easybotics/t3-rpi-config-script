@@ -50,3 +50,29 @@ cd t3-rpi-config-script
 ./imageBuild.sh -vcnm
 ``` 
 
+## Extra!
+
+To get the image you created out insert your sd card into a raspi 
+find the device name by running 
+sudo fdisk -l and looking for something like:
+```
+Disk /dev/sda: 14.9 GiB, 15931539456 bytes, 31116288 sectors
+Disk model: STORAGE DEVICE  
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: dos
+Disk identifier: 0xafe59c2e
+
+Device     Boot Start      End  Sectors  Size Id Type
+/dev/sda1        8192    96663    88472 43.2M  c W95 FAT32 (LBA)
+/dev/sda2       98304 14434303 14336000  6.9G 83 Linux 
+```
+
+in this case the device name is sda, and it has 2 partitions sda1 and sda2
+to clone theis device into an image file use the command
+
+`sudo dd if=/dev/sda of=/home/pi/backup.img bs=1M progress=status`
+this will clone the device *sda* into the file *backup.img* in your home folder
+
+
