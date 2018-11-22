@@ -30,6 +30,7 @@ This script accepts 5 flags
 ## example usage:
 
 Use 8GB SD Card - makes the DD and Pishrink process faster
+Made for use with this base image: https://www.google.com/url?q=https://downloads.raspberrypi.org/raspbian/images/raspbian-2018-06-29/&sa=D&source=hangouts&ust=1542944842860000&usg=AFQjCNGR9aADpKWaoRwloDp-G8cnk1xt_w
 
 First navigate to the folder where you downloaded this repo then:
 `./imageBuild.sh -vcnm`
@@ -40,6 +41,7 @@ which is enabling everything except the led matrix specific config
 Make sure to watch the script because there are a few prompts you have to say 'yes' too, but make sure to say 'no' to all reboot prompts, some installers try and get you to reboot before the imageBuild is done 
 
 script works better if **not** run as root! 
+After the script is finalized, shutdown the pi and grab the image; if you do restart then don't close the 'first boot' help service because 
 
 ## How to get started!
 
