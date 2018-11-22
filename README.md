@@ -52,7 +52,7 @@ cd t3-rpi-config-script
 
 ## Extra!
 
-To backup the image you created, insert the SD card into a device running linux with enough free storage space to comfortably hold the full size of your pi. THen find the device name by running 
+To backup the image you created, insert the SD card into a device running linux with enough free storage space to comfortably hold the full size of your pi. Then find the device name by running 
 sudo fdisk -l and looking for something like:
 ```
 Disk /dev/sda: 14.9 GiB, 15931539456 bytes, 31116288 sectors
