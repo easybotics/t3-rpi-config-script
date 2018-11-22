@@ -37,6 +37,7 @@ First navigate to the folder where you downloaded this repo then:
 The exact paramaters to build the image being used by T3 is 
 `./imageBuild.sh -vcnprbi`
 which is enabling everything except the led matrix specific config 
+Make sure to watch the script because there are a few prompts you have to say 'yes' too, but make sure to say 'no' to all reboot prompts, some installers try and get you to reboot before the imageBuild is done 
 
 script works better if **not** run as root! 
 
@@ -47,7 +48,7 @@ try these commands (in order)
 sudo apt-get install git -y  
 git clone https://github.com/easybotics/t3-rpi-config-script 
 cd t3-rpi-config-script 
-./imageBuild.sh -vcnm
+./imageBuild.sh -vcnprbi
 ``` 
 
 ## Extra!
