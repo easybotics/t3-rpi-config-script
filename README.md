@@ -34,6 +34,10 @@ Use 8GB SD Card - makes the DD and Pishrink process faster
 First navigate to the folder where you downloaded this repo then:
 `./imageBuild.sh -vcnm`
 
+The exact paramaters to build the image being used by T3 is 
+`./imageBuild.sh -vcnprbi`
+which is enabling everything except the led matrix specific config 
+
 script works better if **not** run as root! 
 
 ## How to get started!
