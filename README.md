@@ -74,4 +74,9 @@ to clone theis device into an image file use the command
 `sudo dd if=/dev/sda of=/home/pi/backup.img bs=1M progress=status`
 this will clone the device *sda* into the file *backup.img* in your home folder
 
+To collect a shrinked image you can use the shrink.sh script hosted here: 
+https://github.com/qrti/shrink
+
+uses nice onscreem instructions and some light configuration.
+The extent of the configuation is finding your drive name using the fdisk -l trick from above, and inserting it into the shrink.sh file as described in their readme
 
