@@ -43,7 +43,8 @@ which is enabling everything except the led matrix specific config
 Make sure to watch the script because there are a few prompts you have to say 'yes' too, but make sure to say 'no' to all reboot prompts, some installers try and get you to reboot before the imageBuild is done 
 
 script works better if **not** run as root! 
-After the script is finalized, shutdown the pi and grab the image; if you do restart then don't close the 'first boot' help service because 
+
+After the script is finalized, shutdown the pi and grab the image; if you do restart then don't close the 'first boot' help service because it deletes itself after running once; this process also expands the image if it was shrunk.
 
 ## How to get started!
 
