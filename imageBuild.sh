@@ -117,7 +117,7 @@ then
 	sudo chown pi /root/.node-red/settings.js
 
 	#install imagemagick 
-	sudo aot-get update
+	sudo apt-get update
 	sudo apt-get install -y imagemagick 
 
 	#loop over wallpapers and super-impose t3 logo 
