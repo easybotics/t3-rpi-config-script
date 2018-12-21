@@ -189,8 +189,8 @@ then
 	sudo echo 'network={
 			ssid="rpi"
 			psk="raspberry"
-			key_mgmt=WPKA-PSK
-		}'>>/etc/wpa_supplicant/wpa_supplicant.conf  
+			key_mgmt=WPA-PSK
+		}'| sudo tee -a /etc/wpa_supplicant/wpa_supplicant.conf  
 fi
 
 
@@ -203,6 +203,7 @@ then
 	sudo raspi-config nonint do_i2c 0 
 	sudo raspi-config nonint do_serial 2
 	sudo raspi-config nonint do_ssh 1
+	sudo raspi-config nonint do_resolution 2 27
 	echo "enabled interfaces"
 fi 
 
