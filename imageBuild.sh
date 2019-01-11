@@ -90,6 +90,7 @@ read -p "Would you like to update packages before starting (recommended) Y/N" -n
 echo 
 if [[ $REPLY =~ ^[Yy]$ ]] 
 then 
+	sudo apt-mark hold raspberrypi-kernel
 	sudo apt-get update -y
 	sudo apt-get upgrade -y --fix-missing 
 	sudo apt-get install -y npm
