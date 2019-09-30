@@ -13,7 +13,11 @@ nodePackages=\
  node-red-dashboard node-red-contrib-oled\
  node-red-contrib-bme280 node-red-contrib-cpu node-red-contrib-hostip\
  node-red-node-ping node-red-contrib-thingspeak42\
- node-red-contrib-easybotics-air-quality"
+ node-red-contrib-easybotics-air-quality\
+ node-red-contrib-easybotics-pca9685\
+ node-red-contrib-easybotics-ina219-sensor\
+ node-red-contrib-easybotis-gphoto-upload\
+ node-red-contrib-easybotics-vl53l0x"
 
 #some flags to set which configuration we'll do, most are true by default
 verbose=false
