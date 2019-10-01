@@ -101,6 +101,7 @@ then
 	sudo apt-get install -y xscreensaver
 	sudo apt-get install -y python-games
 	sudo apt-get install -y ntfs-3g
+	sudo apt-get install -y screenfetch
 	sudo npm install npm@latest --unsafe-perm -g
 
 fi
