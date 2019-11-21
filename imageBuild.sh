@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #declare a list of config archives we prepared earlier 
-configFiles="google_chrome_config.tar.gz desktop_config.tar.gz xconfig.tar.gz rootFM.tar.gz bar.tar.gz" 
+configFiles="LDXE.tar.gz google_chrome_config.tar.gz desktop_config.tar.gz xconfig.tar.gz rootFM.tar.gz bar.tar.gz" 
 
 piwiz="piwiz.tar.gz"
 flows="node_red_root_config.tar.gz"
