@@ -149,24 +149,7 @@ then
 	chmod +x /home/pi/.piwiz/run.sh
 fi
 			
-if $ledMatrix 
-then
 
-	#TODO: setup icons and menu items 
-	echo "installing node-red stuff" 
-	#setup node-red autostart 
-	sudo systemctl enable nodered.service 
-	sudo npm config set unsafe-perm true 
-	npm i --save --prefix /home/pi/.node-red node-red-contrib-easybotics-led-matrix
-
-	d=/lib/systemd/system/nodered.service && sudo sed "s/User=pi/User=root/;s/Group=pi/Group=root/" $d > tmp && sudo mv -f tmp $d
-#	d=/root/.node-red/settings.js && sudo sed "/.*userDir:*./c\userDir: '\/home\/pi\/.node-red\/'," $d > tmp && sudo mv -f tmp $d
-	d=/boot/config.txt && sudo sed "/.*dtparam=audio=on*./c\dtparam=audio=off" $d > tmp && sudo cp -f tmp $d
-
-
-	sudo tar -xzf $flows -C /
-	sudo tar -xzf $rootRed -C /
-fi
 
 if $node 
 then 
@@ -187,6 +170,25 @@ then
 		echo "installing $i" 
 		npm i --save --prefix /home/pi/.node-red $i
 	done 
+fi
+
+if $ledMatrix 
+then
+
+	#TODO: setup icons and menu items 
+	echo "installing node-red stuff" 
+	#setup node-red autostart 
+	sudo systemctl enable nodered.service 
+	sudo npm config set unsafe-perm true 
+	npm i --save --prefix /home/pi/.node-red node-red-contrib-easybotics-led-matrix
+
+	d=/lib/systemd/system/nodered.service && sudo sed "s/User=pi/User=root/;s/Group=pi/Group=root/" $d > tmp && sudo mv -f tmp $d
+#	d=/root/.node-red/settings.js && sudo sed "/.*userDir:*./c\userDir: '\/home\/pi\/.node-red\/'," $d > tmp && sudo mv -f tmp $d
+	d=/boot/config.txt && sudo sed "/.*dtparam=audio=on*./c\dtparam=audio=off" $d > tmp && sudo cp -f tmp $d
+
+
+	sudo tar -xzf $flows -C /
+	sudo tar -xzf $rootRed -C /
 fi
 
 if $wifi 
