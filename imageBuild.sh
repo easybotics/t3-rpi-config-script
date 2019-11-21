@@ -102,6 +102,10 @@ then
 	sudo apt-get install -y python-games
 	sudo apt-get install -y ntfs-3g
 	sudo apt-get install -y screenfetch
+	sudo apt-get install -y minecraft-pi
+	sudo apt-get install -y python-minecraftpi
+	sudo apt-get install -y scratch2
+	sudo apt-get install -y firefox-esr
 	#sudo npm install npm@latest --unsafe-perm -g
 
 fi
