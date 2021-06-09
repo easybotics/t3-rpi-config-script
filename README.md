@@ -86,3 +86,20 @@ https://github.com/qrti/shrink
 uses nice onscreem instructions and some light configuration.
 The extent of the configuation is finding your drive name using the fdisk -l trick from above, and inserting it into the shrink.sh file as described in their readme
 
+## Creating piper images from T3 images
+
+The piper images just need a small modification in `/boot/config.txt` to fix the
+display resolution. This can be patched on a running image with the
+`piper_patch_running.sh` script:
+
+```
+sudo ./piper_patch_running.sh
+```
+
+Alternatively, this can be done on an existing image file to create a piper
+version of that exact image with the `piper_patch_img.sh` script (requires
+parted to be installed):
+
+```
+sudo ./piper_patch_img.sh t3_image_file.img t3_image_file_patched.img
+```
