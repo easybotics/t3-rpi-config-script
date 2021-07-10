@@ -16,7 +16,6 @@ nodePackages=\
  node-red-contrib-easybotics-air-quality\
  node-red-contrib-easybotics-pca9685\
  node-red-contrib-easybotics-ina219-sensor\
- node-red-contrib-easybotis-gphoto-upload\
  node-red-contrib-easybotics-vl53l0x"
 
 #some flags to set which configuration we'll do, most are true by default
@@ -157,7 +156,7 @@ fi
 if $node 
 then 
 	echo "install node-red and nodejs"
-	bash node-install-script.sh
+	bash <(curl -sL https://raw.githubusercontent.com/node-red/linux-installers/master/deb/update-nodejs-and-nodered)
 	echo "presetup, neopixel and dht"
 
 	#neopixel setup 
