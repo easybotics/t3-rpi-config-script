@@ -96,7 +96,6 @@ then
 	sudo apt-mark hold raspberrypi-kernel
 	sudo apt-get update
 	sudo apt-get upgrade -y --fix-missing
-	sudo apt-get install -y npm
 	sudo apt-get install -y xscreensaver
 	sudo apt-get install -y python-games
 	sudo apt-get install -y ntfs-3g
@@ -105,7 +104,6 @@ then
 	sudo apt-get install -y python-minecraftpi
 	sudo apt-get install -y scratch2
 	sudo apt-get install -y firefox-esr
-	#sudo npm install npm@latest --unsafe-perm -g
 
 fi
 
@@ -157,7 +155,8 @@ fi
 if $node 
 then 
 	echo "install node-red and nodejs"
-	bash <(curl -sL https://raw.githubusercontent.com/node-red/linux-installers/master/deb/update-nodejs-and-nodered)
+	curl -sL https://raw.githubusercontent.com/node-red/linux-installers/master/deb/update-nodejs-and-nodered >update-nodejs-and-nodered
+	bash update-nodejs-and-nodered --node14
 	echo "presetup, neopixel and dht"
 
 	#neopixel setup 
