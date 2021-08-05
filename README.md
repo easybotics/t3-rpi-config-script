@@ -86,6 +86,28 @@ https://github.com/qrti/shrink
 uses nice onscreem instructions and some light configuration.
 The extent of the configuation is finding your drive name using the fdisk -l trick from above, and inserting it into the shrink.sh file as described in their readme
 
+## Image checklist
+
+* go through setup screen & choose keyboard
+* apt update && apt full-upgrade
+* run t3 script with -vcni
+* reboot
+* make sure node-red is set up correctly
+* set wallpaper
+* run t3 script with -prb
+* rm t3 setup repo
+* clear browser and bash history
+* empty trash
+* power off
+* dd:
+  ```sh
+  sudo dd if=/dev/sdX of=t3.img status=progress
+  ```
+* pishrink:
+  ```sh
+  sudo ./pishrink.sh -v t3.img
+  ```
+
 ## Creating piper images from T3 images
 
 The piper images just need a small modification in `/boot/config.txt` to fix the
